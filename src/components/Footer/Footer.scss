@@ -1,0 +1,74 @@
+@import '../../variables.scss';
+
+.footer {
+  background-color: $green;
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 45px 45px 0 0 ;
+
+  &__creators {
+    &--header {
+      color: white;
+      font-size: 26px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    &--item {
+      color: white;
+      font-size: 18px;
+
+      &--link {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &--logo {
+      cursor: pointer;
+      transition: all $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--text {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  &__contact {
+    font-size: 20px;
+    color: white;
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+}
+
+@media (max-width: 639px) {
+  .footer {
+    flex-direction: column;
+    align-items: start;
+
+    &__block {
+      order: 3;
+    };
+  }
+}

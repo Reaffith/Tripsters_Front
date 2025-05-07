@@ -1,0 +1,39 @@
+@import '../../mixins';
+@import '../../variables';
+
+.friends {
+  @include page-grid;
+  justify-content: center;
+  padding-inline: 100px;
+
+  &__top {
+    grid-column: 1/-1;
+    display: flex;
+    gap: 20px;
+
+    &--button {
+      padding: 10px;
+      background-color: $background-color-dark;
+      border-radius: 20px;
+      margin: 0;
+      cursor: pointer;
+      transition: all $transition-duration;
+
+      &.active {
+        border: 1px solid $green;
+        color: $green;
+      }
+    }
+  }
+
+  &__list {
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
+    min-height: calc(100vh - 181px - 247px);
+  }
+}

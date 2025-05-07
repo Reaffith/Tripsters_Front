@@ -1,0 +1,49 @@
+@import '../../../mixins';
+@import '../../../variables';
+
+.addUserDetails {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  margin-inline: auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: $background-color-dark;
+  align-items: center;
+  height: 60px;
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+
+    &--img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    &--text {
+      font-size: 22px;
+      font-weight: 600;
+      color: $text-color-dark;
+      cursor: pointer;
+      transition: all $transition-duration;
+
+      &:hover {
+        color: #2d972d;
+      }
+    }
+  }
+
+  &__button {
+    width: 30%;
+    @include button-style;
+
+    &.disabled {
+     color: $green;
+     background-color: $background-color-dark; 
+    }
+  }
+}

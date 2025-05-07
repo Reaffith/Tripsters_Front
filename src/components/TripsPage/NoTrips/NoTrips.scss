@@ -1,0 +1,20 @@
+@import "../../../variables";
+@import "../../../mixins";
+
+.noTrips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &_header {
+    font-size: 70px;
+    color: $text-color-dark;
+  }
+
+  &_button {
+    @include button-style;
+    width: 400px;
+  }
+}

@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.error_block {
+  position: absolute;
+  left: 30vw;
+  width: 40vw;
+  background-color: rgb(161, 44, 44);
+  border-radius: 40px;
+  padding: 30px 40px;
+  animation: show $transition-duration linear forwards;
+  
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &--header {
+      color: #b8c6bb;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    svg {
+      cursor: pointer;
+      color: #b8c6bb;
+    }
+  }
+
+  &__text {
+    color: #b8c6bb;
+    font-size: 18px;
+  }
+}
+
+@keyframes show {
+  from {
+    top: -100px;
+  } to {
+    top: 80px
+  }
+}

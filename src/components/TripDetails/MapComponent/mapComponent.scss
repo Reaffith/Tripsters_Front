@@ -1,0 +1,132 @@
+@import '../../../variables';
+@import '../../../mixins';
+
+
+
+  .suggest {
+    
+    position: relative;
+  
+    &--header {
+      font-weight: 700;
+      color: $text-color-dark;
+  
+    }
+  
+    input {
+      outline: none;
+      border: 1px solid white;
+      border-radius: 32px;
+      background-color: $background-color-dark;
+
+      &:focus {
+        border: 1px solid $green;
+      }
+    }
+  
+    &-block {
+      display: grid;
+      gap: 5%;
+      position: absolute;
+
+  
+      &--button {
+        @include button-style;
+        height: 52px;
+      }
+    }
+  }
+
+@media (min-width: 1199px) {
+  .map {
+    height: 60vh;
+  }
+
+  .suggest {
+    width: 100%;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    
+    &--header {
+      font-size: 25px;
+    }
+
+    input {
+      width: 100% !important;
+      height: 30px;
+      padding: 8px 12px;
+      font-size: 18px;
+
+    }
+
+    &-block {
+      grid-template-columns: 70% 25%;
+      margin-top: 20px;
+      width: 100%;
+
+    }
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 639px) {
+  .map {
+    height: 60vh;
+  }
+
+  .suggest {
+    width: 100%;
+    padding-top: 30px;
+    margin-bottom: 90px;
+    
+    &--header {
+      font-size: 25px;
+    }
+
+    input {
+      width: 100% !important;
+      height: 30px;
+      padding: 8px 12px;
+      font-size: 18px;
+
+    }
+
+    &-block {
+      grid-template-columns: 70% 25%;
+      margin-top: 20px;
+      width: 100%;
+
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .map {
+    height: 80vh;
+  }
+
+  .suggest {
+    width: 100%;
+    padding-top: 30px;
+    margin-bottom: 90px;
+    
+    &--header {
+      font-size: 25px;
+    }
+
+    input {
+      width: 100% !important;
+      height: 30px;
+      padding: 8px 12px;
+      font-size: 18px;
+
+    }
+
+    &-block {
+      grid-template-columns: 60% 30%;
+      gap: 10%;
+      margin-top: 20px;
+      width: 100%;
+
+    }
+  }
+}

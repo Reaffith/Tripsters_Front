@@ -1,0 +1,43 @@
+@mixin page-grid {
+  display: grid;
+
+  $column: 12;
+
+  grid-template-columns: repeat(#{$column}, minmax(60px, 150px));
+  column-gap: 30px;
+
+  @media (max-width: 1199px) {
+    $column: 6;
+
+    column-gap: 20px;
+    grid-template-columns: repeat(#{$column}, 1fr);
+  }
+
+  @media (max-width: 639px) {
+    $column: 2;
+
+    column-gap: 20px;
+    grid-template-columns: repeat(#{$column}, 1fr);
+  }
+}
+
+@mixin button-style {
+  color: #fdfdff;
+  margin: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid $green;
+  background-color: $green;
+  padding-block: 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all $transition-duration;
+
+  &:hover {
+    background-color: $background-color-dark;
+    color: $green;
+  }
+}

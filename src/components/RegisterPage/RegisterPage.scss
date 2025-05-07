@@ -1,0 +1,79 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+.register {
+  min-height: calc(100vh - 181px - 247px);
+  @include page-grid;
+  justify-content: center;
+
+  &__header {
+    font-size: 28px;
+    font-weight: 600;
+    color: $text-color-dark;
+    margin: 0 0 30px 0;
+    grid-column: 4/-4;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    grid-column: 4 / -4;
+
+    &--block {
+      display: grid;
+      grid-template-columns: 47.5% 47.5%;
+      gap: 5%;
+    }
+
+    &--input {
+      width: calc(100% - 24px);
+      height: 30px;
+      outline: none;
+      border: 1px solid white;
+      border-radius: 32px;
+      padding: 8px 12px;
+      font-size: 18px;
+      background-color: $background-color-dark;
+
+      &:focus {
+        border: 1px solid $green;
+      }
+
+      &:first-of-type {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--label {
+      font-size: 16px;
+      font-weight: 500;
+      color: $text-color-dark;
+      margin-bottom: 4px;
+      margin-left: 12px;
+    }
+  }
+
+  &__button {
+    grid-column: 4/-4;
+    color: $background-color;
+    margin: 30px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid $green;
+    background-color: $green;
+    padding: 14px 60px;
+    width: 100%;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all $transition-duration;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: white;
+      color: $text-color-dark;
+    }
+  }
+}

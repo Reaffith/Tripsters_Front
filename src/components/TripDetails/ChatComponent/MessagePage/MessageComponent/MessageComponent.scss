@@ -1,0 +1,57 @@
+@import "../../../../../variables";
+
+.message {
+  width: 40%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 20px;
+
+  &__pfp {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-inline: 15px;
+  }
+
+  &__block {
+    background-color: white;
+    padding: 17px;
+
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+    
+
+    &--author {
+      margin: 0;
+      font-weight: 600;
+      color: $green;
+    }
+
+    &--message {
+      margin: 0;
+    }
+
+    &--time {
+      margin: 0;
+      font-size: 14px;
+      line-height: 14px;
+      text-align: end;
+    }
+  }
+
+  &.current-user {
+    position: relative;
+    right: -62%;
+    justify-content: end !important;
+
+    div {
+      align-items: end;
+      color: white;
+      background-color: $green;
+    }
+  }
+}

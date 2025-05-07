@@ -1,0 +1,241 @@
+@import "../../mixins";
+@import "../../variables";
+
+.createTrip {
+  @include page-grid;
+  justify-content: center;
+
+  &__button {
+    @include button-style;
+  }
+
+  &__header {
+    font-weight: 600;
+    color: $text-color-dark;
+    margin: 0;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    &.double--block {
+      overflow: visible;
+      z-index: 4;
+
+      &.date {
+        z-index: 5;
+      }
+    }
+
+    &--doubleBlock {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--label {
+      font-weight: 500;
+      color: $text-color-dark;
+    }
+
+    input {
+      outline: none;
+      border: 1px solid white;
+      border-radius: 32px;
+
+      background-color: $background-color-dark;
+
+      &:focus {
+        border: 1px solid $green;
+      }
+    }
+
+    .suggestions {
+      background-color: $background-color;
+    }
+
+    .additional {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-search {
+        overflow: visible;
+
+        .suggestions {
+          z-index: 2;
+        }
+      }
+
+      &-block {
+        position: relative;
+
+        background-color: $background-color-dark;
+        display: flex;
+        flex-direction: column;
+
+        overflow-y: scroll;
+
+        &-element {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          &--text {
+            margin: 0;
+            color: $text-color-dark;
+            background-color: $background-color-dark;
+          }
+
+          &--button {
+            display: block;
+            position: relative;
+            right: 10px;
+            margin: 0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//pc
+@media (min-width: 1199px) {
+  .createTrip {
+    row-gap: 20px;
+    padding-bottom: 80px;
+
+    &__button {
+      grid-column: 5 / 9;
+    }
+
+    &__header {
+      grid-column: 4/-4;
+      font-size: 28px;
+    }
+
+    &__block {
+      grid-column: 4/-4;
+
+      &.double--block {
+        flex-direction: row !important;
+        justify-content: space-between;
+        height: 74px;
+      }
+      &--doubleBlock {
+        width: calc(50% - 20px);
+      }
+
+      &--label {
+        font-size: 16px;
+        margin-bottom: 4px;
+        margin-left: 12px;
+      }
+
+      input {
+        width: 100% !important;
+        height: 30px;
+        padding: 8px 12px;
+        font-size: 18px;
+      }
+
+      .suggestions {
+        width: 99.5%;
+      }
+
+      .additional {
+        &-search {
+          height: 48px;
+        }
+
+        &-block {
+          padding: 20px;
+          border-radius: 40px;
+          height: 200px;
+          margin-top: 20px;
+          width: 100%;
+          gap: 10px;
+
+          &-element {
+            &--text {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//tablet
+@media (max-width: 1199px) {
+  .createTrip {
+    row-gap: 20px;
+    padding-bottom: 80px;
+    padding-inline: 40px;
+
+    &__button {
+      grid-column: 2 / -2;
+    }
+
+    &__header {
+      grid-column: 1/-1;
+      font-size: 28px;
+    }
+
+    &__block {
+      grid-column: 1/-1;
+      padding-inline: 0 20px;
+
+      &.double--block {
+        flex-direction: row !important;
+        justify-content: space-between;
+        height: 74px;
+      }
+      &--doubleBlock {
+        width: calc(50% - 20px);
+      }
+
+      &--label {
+        font-size: 16px;
+        margin-bottom: 4px;
+        margin-left: 12px;
+      }
+
+      input {
+        width: 100% !important;
+        height: 30px;
+        padding: 8px 12px;
+        font-size: 18px;
+      }
+
+      .suggestions {
+        width: 99.5%;
+      }
+
+      .additional {
+        &-search {
+          height: 48px;
+        }
+
+        &-block {
+          padding: 20px;
+          border-radius: 40px;
+          height: 200px;
+          margin-top: 20px;
+          width: 100%;
+          gap: 10px;
+
+          &-element {
+            &--text {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

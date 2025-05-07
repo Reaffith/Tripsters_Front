@@ -1,0 +1,383 @@
+@import "../../_variables.scss";
+
+.header {
+  background-color: $background-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &_user {
+    overflow: hidden;
+    text-decoration: none;
+    color: $green;
+    font-weight: 600;
+  }
+
+  &__link {
+    &--pic {
+      transition: all $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__linkBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: $background-color-dark;
+
+    border-radius: 40px;
+
+    &--link {
+      text-decoration: none;
+
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $text-color-dark;
+      transition: all $transition-duration;
+      text-align: center;
+      margin: 0;
+
+      &:hover {
+        letter-spacing: 1.3px;
+        color: $green;
+      }
+    }
+
+    input {
+      border: none;
+      outline: none;
+      border-radius: 15px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &--box {
+      display: flex;
+      flex-direction: column;
+
+      &--block {
+        position: absolute;
+
+        background-color: $background-color-dark;
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 20px;
+
+        div {
+          background-color: white;
+        }
+
+        &--text {
+          color: $text-color-dark;
+        }
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    box-sizing: border-box;
+
+    &--sign {
+      border: 2px solid $green;
+      border-radius: 30px;
+      transition: all $transition-duration;
+
+      &:hover {
+        background-color: $green;
+
+        p {
+          color: $background-color;
+        }
+      }
+
+      p {
+        transition: all $transition-duration;
+        margin: 0;
+
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $text-color-dark;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    &--lang {
+      display: flex;
+      flex-direction: row;
+
+      &--option {
+        margin: 0;
+        
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $text-color-dark;
+        transition: all $transition-duration;
+        text-align: center;
+
+        &:first-child,
+        &:last-child {
+          &:hover {
+            letter-spacing: 1.3px;
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1199px) {
+  .header {
+    padding: 48px 64px;
+
+    &_user {
+      max-width: 180px;
+      font-size: 18px;
+    }
+
+    &__link {
+      &--pic {
+        height: 80px;
+      }
+    }
+
+    &__linkBlock {
+      gap: 15px;
+      padding-inline: 20px;
+      height: 50px;
+
+      &--link {
+        width: 120px;
+        font-size: 16px;
+      }
+
+      input {
+        padding: 7px;
+        width: 220px;
+      }
+
+      &--box {
+        width: 234px;
+
+        &--block {
+          top: 120px;
+          width: 220px;
+          gap: 20px;
+          padding: 7px;
+
+          &--text {
+            margin: 6px;
+          }
+        }
+      }
+    }
+
+    &__block {
+      gap: 30px;
+
+      &--sign {
+        width: 160px;
+        padding-block: 12px;
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      &--lang {
+        gap: 5px;
+        width: 60px;
+
+        &--option {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1199px) and (min-width: 639px) {
+  .header {
+    padding: 18px 24px;
+
+    &_user {
+      max-width: 130px;
+      font-size: 16px;
+    }
+
+    &__link {
+      &--pic {
+        height: 50px;
+      }
+    }
+
+    &__linkBlock {
+
+      &.dropdownmenu {
+        position: absolute;
+        width: 100vw;
+        height: calc(100vh - 90px);
+        left: 0;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        transition: all $transition-duration;
+        z-index: 99999;
+      }
+
+      gap: 10px;
+      padding-inline: 10px;
+      padding-block: 5px;
+      height: auto;
+
+      &--link {
+        width: 80px;
+        font-size: 14px;
+      }
+
+      input {
+        padding: 5px;
+        width: 150px;
+      }
+
+      &--box {
+        width: 155px;
+
+        &--block {
+          top: 80px;
+          width: 150px;
+          gap: 40px;
+          padding: 7px;
+
+          &--text {
+            margin: 6px;
+          }
+        }
+      }
+    }
+
+    &__block {
+      gap: 20px;
+
+      &--sign {
+        width: 80px;
+        padding-block: 12px;
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      &--lang {
+        gap: 5px;
+        width: 60px;
+
+        &--option {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .header {
+    padding: 10px 15px;
+
+    &_user {
+      max-width: 130px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    &__link {
+      &--pic {
+        height: 40px;
+      }
+    }
+
+    &__linkBlock {
+
+      &.dropdownmenu {
+        position: absolute;
+        width: 100vw;
+        height: calc(100vh - 60px);
+        left: 0;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        transition: all $transition-duration;
+        z-index: 99999;
+      }
+
+      gap: 5px;
+      padding-inline: 10px;
+      padding-block: 5px;
+      height: auto;
+
+      &--link {
+        width: 80px;
+        font-size: 14px;
+      }
+
+      input {
+        padding: 5px;
+        width: 150px;
+      }
+
+      &--box {
+        width: 155px;
+
+        &--block {
+          top: 80px;
+          width: 150px;
+          gap: 40px;
+          padding: 7px;
+
+          &--text {
+            margin: 6px;
+          }
+        }
+      }
+    }
+
+    &__block {
+      gap: 10px;
+
+      &--sign {
+        width: 80px;
+        padding-block: 12px;
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      &--lang {
+        gap: 5px;
+        width: 60px;
+        justify-content: center;
+
+        &--option {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

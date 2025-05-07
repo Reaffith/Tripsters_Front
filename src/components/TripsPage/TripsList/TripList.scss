@@ -1,0 +1,251 @@
+@import "../../../mixins";
+@import "../../../variables";
+
+.triplist {
+  &__list {
+    @include page-grid;
+
+
+    &--paging {
+      display: flex;
+
+      &--item {
+        cursor: pointer;
+        font-weight: 600;
+        color: rgba(20, 46, 27, 0.62);
+        transition: all $transition-duration;
+        margin: 0;
+
+        &.active {
+          background-color: $green;
+          color: white;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    max-width: fit-content;
+
+    &--block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      cursor: pointer;
+      background-color: $background-color-dark;
+
+      &--current {
+        margin: 0;
+        font-weight: 600;
+
+        color: $text-color-dark;
+      }
+
+      &--dropdown {
+        position: relative;
+        top: 4px;
+      }
+    }
+
+    &--options {
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+
+      position: absolute;
+      z-index: 20;
+      background-color: $background-color-dark;
+
+      &--item {
+        margin: 0;
+        cursor: pointer;
+        color: $text-color-dark;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all $transition-duration;
+
+        &:hover {
+          color: $green;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+
+  &__header {
+    font-weight: 600;
+    color: $text-color-dark;
+    margin: 0;
+  }
+
+  &__button {
+    display: block;
+    @include button-style;
+  }
+}
+
+@media (min-width: 1199px) {
+  .triplist {
+    &__list {
+      min-height: 50vh;
+      margin-top: 40px;
+      padding-inline: 40px;
+      row-gap: 30px;
+      min-width: calc(100vh - (248px + 181px));
+
+      &--paging {
+        grid-column: 3 / -3;
+        gap: 30px;
+
+        &--item {
+          font-size: 17px;
+          padding: 10px;
+        }
+      }
+    }
+
+    &__filter {
+      margin-left: 80px;
+      margin-top: 20px;
+
+      &--block {
+        width: 120px;
+        padding: 10px 15px;
+        border-radius: 25px;
+
+        &--current {
+          font-size: 15px;
+        }
+      }
+
+      &--options {
+        padding: 10px;
+        gap: 8px;
+        margin-top: 10px;
+        width: 130px;
+      }
+    }
+
+    &__header {
+      font-size: 28px;
+      padding: 0 0 0 80px;
+    }
+
+    &__button {
+      width: 50%;
+      margin: auto !important;
+      margin-block: 35px !important;
+    }
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 639px) {
+  .triplist {
+    &__list {
+      min-height: 60vh;
+      margin-top: 40px;
+      padding-inline: 40px;
+      row-gap: 30px;
+      min-width: calc(100vh - (248px + 181px));
+
+      &--paging {
+        grid-column: 1 / -1;
+        gap: 30px;
+
+        &--item {
+          font-size: 17px;
+          padding: 10px;
+        }
+      }
+    }
+
+    &__filter {
+      margin-left: 80px;
+      margin-top: 20px;
+
+      &--block {
+        width: 120px;
+        padding: 10px 15px;
+        border-radius: 25px;
+
+        &--current {
+          font-size: 15px;
+        }
+      }
+
+      &--options {
+        padding: 10px;
+        gap: 8px;
+        margin-top: 10px;
+        width: 130px;
+      }
+    }
+
+    &__header {
+      font-size: 28px;
+      padding: 0 0 0 80px;
+    }
+
+    &__button {
+      width: 50%;
+      margin: auto !important;
+      margin-block: 35px !important;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .triplist {
+    &__list {
+      margin-top: 20px;
+      padding-inline: 20px;
+      row-gap: 30px;
+      min-width: calc(100vh - (248px + 181px));
+
+      &--paging {
+        grid-column: 1 / -1;
+        gap: 30px;
+
+        &--item {
+          font-size: 17px;
+          padding: 10px;
+        }
+      }
+    }
+
+    &__filter {
+      margin-left: 20px;
+      margin-top: 20px;
+
+      &--block {
+        width: 120px;
+        padding: 10px 15px;
+        border-radius: 25px;
+
+        &--current {
+          font-size: 15px;
+        }
+      }
+
+      &--options {
+        padding: 10px;
+        gap: 8px;
+        margin-top: 10px;
+        width: 130px;
+      }
+    }
+
+    &__header {
+      font-size: 28px;
+      padding: 0 0 0 20px;
+    }
+
+    &__button {
+      width: 50%;
+      margin: auto !important;
+      margin-block: 35px !important;
+    }
+  }
+}
